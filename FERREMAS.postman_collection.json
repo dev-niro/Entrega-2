@@ -1,0 +1,495 @@
+{
+	"info": {
+		"_postman_id": "c5cf50d3-f9e9-4edc-a46e-76951ab7d781",
+		"name": "FERREMAS",
+		"description": "Es una distribuidora, establecida en la comuna de Santiago , desde la década de los 80. Cuenta con 4 sucursales en la región metropolitana y 3 sucursales en regiones con planes de expansión en todo Chile.  \nEn \"FERREMAS\", se puede encontrar una amplia gama de productos, desde herramientas manuales y eléctricas, pinturas, materiales eléctricos, hasta accesorios y artículos de seguridad. Trabajan con marcas reconocidas del sector como Bosch, Makita,  \nStanley y Sika, ofreciendo así diversidad y calidad en sus productos.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34415114"
+	},
+	"item": [
+		{
+			"name": "API Clientes y Productos",
+			"item": [
+				{
+					"name": "Clientes",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/cliente",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"cliente"
+									]
+								},
+								"description": "Método que permite traer la lista completa de Clientes."
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/cliente/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"cliente",
+										"1"
+									]
+								},
+								"description": "Método que permite traer un registro de Cliente por su ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\":1,\r\n    \"Rut\": \"11.111.111-1\",\r\n    \"FirstName\":\"{{$randomFirstName}}\",\r\n    \"LastName\":\"{{$randomLastName}}\",\r\n    \"Email\":\"{{$randomEmail}}\",\r\n    \"Address\": \"{{$randomStreetAddress}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:27776/api/cliente",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"cliente"
+									]
+								},
+								"description": "Método que permite añadir un registro de Cliente."
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"FirstName\":\"{{$randomFirstName}}\",\r\n    \"LastName\":\"{{$randomLastName}}\",\r\n    \"Email\":\"{{$randomEmail}}\",\r\n    \"Address\": \"{{$randomStreetAddress}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:27776/api/cliente/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"cliente",
+										"1"
+									]
+								},
+								"description": "Método que permite editar un registro de Cliente por su ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/cliente/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"cliente",
+										"1"
+									]
+								},
+								"description": "Método que permite eliminar de la lista a un Cliente por su ID."
+							},
+							"response": []
+						}
+					],
+					"description": "Los Clientes tienen los siguientes campos:\n\n- Id\n    \n- Rut\n    \n- FirstName\n    \n- LastName\n    \n- Email\n    \n- AddressEnd"
+				},
+				{
+					"name": "Producto",
+					"item": [
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/producto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto"
+									]
+								},
+								"description": "Método que permite traer la lista completa de Productos."
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/producto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto",
+										"1"
+									]
+								},
+								"description": "Método que permite traer un registro de Producto por su ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Id\":{{$randomInt}},\r\n    \"Name\":\"{{$randomProduct}}\",\r\n    \"Price\":{{$randomInt}},\r\n    \"Description\":\"{{$randomJobDescriptor}}\",\r\n    \"Stock\":{{$randomInt}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:27776/api/producto",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto"
+									]
+								},
+								"description": "Método que permite añadir un registro de Producto."
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Price\":{{$randomInt}},\r\n    \"Description\":\"{{$randomJobDescriptor}}\",\r\n    \"Stock\":{{$randomInt}}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:27776/api/producto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto",
+										"1"
+									]
+								},
+								"description": "Método que permite editar un registro de Producto por su ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Stock Units",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "2",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:27776/api/producto/1/reducirstock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto",
+										"1",
+										"reducirstock"
+									]
+								},
+								"description": "Método que permite restar del stock de un registro de Producto por su ID."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:27776/api/producto/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "27776",
+									"path": [
+										"api",
+										"producto",
+										"1"
+									]
+								},
+								"description": "Método que permite eliminar un registro de Producto por su ID."
+							},
+							"response": []
+						}
+					],
+					"description": "Los Productos tienen los siguiente campos:\n\n- Id\n    \n- Name\n    \n- Price\n    \n- Description\n    \n- Stock"
+				}
+			],
+			"description": "Esta API hecha en C# permite el manejo de los Clientes y Productos de FERREMAS."
+		},
+		{
+			"name": "API Ventas",
+			"item": [
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"client\": \"1\",\r\n    \"documento\": \"Factura\",\r\n    \"products\": [\r\n        {\r\n            \"id\": \"2\",\r\n            \"quantity\": \"1\"\r\n        },\r\n        {\r\n            \"id\": \"3\",\r\n            \"quantity\": \"1\"\r\n        },\r\n        {\r\n            \"id\": \"1\",\r\n            \"quantity\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/BE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"BE"
+							]
+						},
+						"description": "Método que permite generar una orden de venta. Esta orden de venta debe tener un cliente valido, el tipo de documento, los productos y sus cantidades."
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/BE/000001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"BE",
+								"000001"
+							]
+						},
+						"description": "Método que permite buscar una orden de venta."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta API hecha en Python con Flask Restful permite la creación y busqueda de ordenes de ventas de FERREMAS."
+		},
+		{
+			"name": "API Entregas",
+			"item": [
+				{
+					"name": "Get Entregas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/entregas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"entregas"
+							]
+						},
+						"description": "Método que permite traer todas las entregas realizadas indiferente de su estado."
+					},
+					"response": []
+				},
+				{
+					"name": "Post Entrega",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documento\": \"Boleta\",\r\n    \"tipo_envio\": \"Retiro\",\r\n    \"id_orden\": \"000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/entregas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"entregas"
+							]
+						},
+						"description": "Método que permite añadir un registro de entrega, asignandole el estado de Pendiente."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pendientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/pendientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"pendientes"
+							]
+						},
+						"description": "Método que permite buscar las ordenes pendientes, separandolas por tipo de entrega."
+					},
+					"response": []
+				},
+				{
+					"name": "Put Estado Entrega",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"estado\": \"Entregado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/entrega/C001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"entrega",
+								"C001"
+							]
+						},
+						"description": "Método que permite cambiar el estado de entrega de un pedido a Entregado por su ID."
+					},
+					"response": []
+				}
+			],
+			"description": "Esta API hecha en Python con Flask Restful permite el manejo de las entregas de FERREMAS."
+		}
+	]
+}
