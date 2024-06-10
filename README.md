@@ -5,7 +5,7 @@ Dentro de los entregables para cumplir la entrega tenemos los siguientes:
 - API Clientes y Productos -> Hecha en C#
 - API Entrega -> Hecha en Python Flask-Restful
 - API Ventas -> Hecha en Python Flask-Restful
-- Front -> Hecho con html, css, js.
+- Front -> Hecho con html, css, js, bootstrap 4.5.2.
 - Documentación de los endpoints de cada una de las APIs.
 - Listado de curls para el llenado de la API de clientes y productos, para así poder hacer pruebas.
 - Colección de Postman.
