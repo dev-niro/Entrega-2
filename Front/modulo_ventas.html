@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferremax</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: darkslategrey;
+      color: whitesmoke;
+    }
+    .label_radio{
+        padding-right: 10px;
+    }
+    .text_delivery{
+        display: none;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+<a href="index.html" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Volver</a>
+
+<div id="popup" style="display: none;">
+    <div id="mensaje-popup" class="alert alert-success" role="alert"></div>
+</div>
+
+<div class="container mt-5">
+  <h2>Venta</h2>
+  <form id="formulario">
+    <!-- Radio buttons para el tipo de venta -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Tipo de Venta:</label><br>
+                    <input type="radio" id="boletaRadio" name="documento" value="Boleta" required>
+                    <label class="label_radio" for="boletaRadio">Boleta</label>
+                    <input type="radio" id="facturaRadio" name="documento" value="Factura" required>
+                    <label class="label_radio" for="facturaRadio">Factura</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Radio buttons para el tipo de entrega -->
+                <div class="form-group">
+                    <label>Tipo de Entrega:</label><br>
+                    <input type="radio" id="retiroRadio" name="tipoEntrega" value="Retiro" onchange="mostrarMensajeEntrega()" required>
+                    <label class="label_radio" for="tipoEntrega">Retiro</label>
+                    <input type="radio" id="despachoRadio" name="tipoEntrega" value="Despacho" onchange="mostrarMensajeEntrega()" required>
+                    <label class="label_radio" for="tipoEntrega">Despacho</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje de entrega -->
+    <div id="mensajeEntrega" class="text_delivery"></div>
+
+    <!-- Select para seleccionar cliente -->
+    <div class="form-group">
+      <label for="cliente">Cliente:</label>
+      <select class="form-control" id="cliente" name="cliente" required>
+      </select>
+    </div>
+
+    <!-- Select y input para producto y cantidad -->
+    <div class="form-group">
+      <label for="producto">Producto:</label>
+      <select class="form-control" id="producto" name="producto[]" required>
+      </select>
+      <input type="number" class="form-control" name="cantidad[]" id="cantidadInput" placeholder="Cantidad" min="1" required>
+      <div class="invalid-feedback">La cantidad debe ser mayor que cero.</div>
+    </div>
+
+    <!-- Contenedor para productos adicionales -->
+    <div id="productos-extra"></div>
+
+    <!-- Botones para agregar y eliminar productos -->
+    <div class="form-group">
+        <button type="button" class="btn btn-primary" onclick="agregarProducto()">Agregar Producto</button>
+        <button type="button" class="btn btn-danger" onclick="eliminarUltimoProducto()">Eliminar Último Producto</button>
+    </div>
+
+    <!-- Botón para enviar formulario -->
+    <button type="button" class="btn btn-success" onclick="enviarFormulario()">Enviar</button>
+  </form>
+</div>
+
+<!-- Bootstrap JS (jQuery debe ser incluido antes de Bootstrap JS) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    var productosFetch = [];
+
+    window.onload = function() {
+        // Fetch para obtener clientes
+        fetch('http://localhost:27776/api/cliente')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos de los clientes:', data);
+            if (data === undefined || data.length == 0) {
+                alert("Error al traer los clientes, contactese con el equipo de TI.");
+                return;
+            }
+            var clientesSelect = document.getElementById('cliente');
+            data.forEach(cliente => {
+                var option = document.createElement('option');
+                option.value = cliente.id;
+                option.text = cliente.firstName + ' ' + cliente.lastName;
+                clientesSelect.appendChild(option);
+            });
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+        // Fetch para obtener productos
+        fetch('http://localhost:27776/api/producto')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos de los productos:', data);
+            if (data === undefined || data.length == 0) {
+                alert("Error al traer los productos, contactese con el equipo de TI.");
+                return;
+            }
+            var productosSelect = document.getElementById('producto');
+            data.forEach(prod => {
+                var option = document.createElement('option');
+                option.value = prod.id;
+                option.text = prod.name;
+                productosSelect.appendChild(option);
+                productosFetch.push(option);
+            });
+        })
+        .catch(error => {
+            console.error('Ha habido un problema con su operación de recuperación:', error);
+        });
+    };
+
+    // Función para agregar un nuevo producto
+    function agregarProducto() {
+        var div = document.createElement("div");
+        div.innerHTML =
+        `
+        <div class="form-group">
+            <label for="producto">Producto:</label>
+            <select class="form-control" name="producto[]" required></select>
+            <input type="number" class="form-control" name="cantidad[]" placeholder="Cantidad" min="1" required>
+            <div class="invalid-feedback">La cantidad debe ser mayor que cero.</div>
+        </div>
+        `;
+        var select = div.querySelector('select');
+        // Agregar las opciones de productos guardadas en la constante productosFetch
+        productosFetch.forEach(opcion => {
+            select.appendChild(opcion.cloneNode(true));
+        });
+        document.getElementById("productos-extra").appendChild(div);
+    }
+
+    // Función para eliminar el último producto agregado
+    function eliminarUltimoProducto() {
+        var productosExtra = document.getElementById("productos-extra");
+        if (productosExtra.lastElementChild) {
+            productosExtra.removeChild(productosExtra.lastElementChild);
+        }
+    }
+
+    // Función para mostrar el mensaje de entrega dependiendo de la opción seleccionada
+    function mostrarMensajeEntrega() {
+        var tipoEntrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
+        var mensajeEntrega = document.getElementById('mensajeEntrega');
+        if (tipoEntrega === 'Despacho') {
+            mensajeEntrega.innerText = 'El despacho puede tardar de 3 a 5 días hábiles.';
+            mensajeEntrega.style.display = "block";
+        } else if (tipoEntrega === 'Retiro') {
+            mensajeEntrega.innerText = 'El retiro en tienda estará disponible después de 3 dias habiles.';
+            mensajeEntrega.style.display = "block";
+        } else {
+            mensajeEntrega.style.display = "none";
+        }
+    }
+
+    function enviarFormulario() {
+        var formulario = document.getElementById("formulario");
+        var formData = new FormData(formulario);
+        var producto = formData.getAll("producto[]");
+        var cantidad = formData.getAll("cantidad[]");
+        var documento = formData.get("documento");
+        var tipoEnvio = formData.get("tipoEntrega");
+        if (!documento) {
+            alert("Por favor, seleccione el tipo de venta.");
+            return;
+        }
+        if (!tipoEnvio) {
+            alert("Por favor, seleccione el tipo de entrega.");
+            return;
+        }
+        var data = {
+            client: formData.get("cliente"),
+            documento: formData.get("documento"),
+            products: []
+        };
+        if (cantidad.some(c => Number(c) < 1)) {
+            alert("La cantidad de los productos debe ser mayor que cero.");
+            return;
+        }
+        for (var i = 0; i < producto.length; i++) {
+            var prod = producto[i];
+            var q = cantidad[i];
+            var productObj = {
+                id: prod,
+                quantity: q
+            };
+            data.products.push(productObj);
+        };
+        if (!data.client) {
+            alert("Por favor, seleccione un cliente.");
+            return;
+        }
+        if (data.products === undefined || data.products.length == 0) {
+            alert("No se puede procesar la orden sin productos.");
+            return;
+        }
+        fetch('http://localhost:5000/api/BE', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            },
+            method: 'POST',
+            mode: 'cors',
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
+            datos = JSON.parse(data)
+            if (datos.message !== undefined){
+                alert(datos.message);
+                return;
+            }
+            console.log(datos);
+            entrega = {
+                documento: datos.documento,
+                tipo_envio: tipoEnvio,
+                id_orden: datos.id
+            }
+            fetch('http://localhost:5001/api/entregas', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
+                },
+                method: 'POST',
+                mode: 'cors',
+                body: JSON.stringify(entrega)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                mostrarPopup('¡La venta se generó con éxito!');
+            });
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+    }
+
+    function mostrarPopup(mensaje) {
+        // Mostrar el popup
+        var popup = document.getElementById('popup');
+        var mensajePopup = document.getElementById('mensaje-popup');
+        mensajePopup.innerText = mensaje;
+        popup.style.display = 'block';
+
+        // Ocultar el popup después de 5 segundos
+        setTimeout(function() {
+            popup.style.display = 'none';
+            // Recargar la página después de 5 segundos
+            location.reload();
+        }, 4000); // 4000 milisegundos = 4 segundos
+    }
+
+</script>
+
+</body>
+</html>

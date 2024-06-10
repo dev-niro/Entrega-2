@@ -1,0 +1,93 @@
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.exe
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.deps.json
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.json
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.dev.json
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.AssemblyReference.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfoInputs.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfo.cs
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.CoreCompileInputs.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Manifest.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.xml
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Usuarios.API.styles.css
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.RazorTargetAssemblyInfo.cache
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\Cetecom\source\repos\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.genruntimeconfig.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.exe
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.deps.json
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.json
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.dev.json
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.AssemblyReference.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfoInputs.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfo.cs
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.CoreCompileInputs.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Manifest.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.xml
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Usuarios.API.styles.css
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.RazorTargetAssemblyInfo.cache
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\Cetecom\Downloads\Usuarios\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.genruntimeconfig.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.StaticWebAssets.xml
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.exe
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.deps.json
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.json
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.dev.json
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.AssemblyReference.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfoInputs.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfo.cs
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.CoreCompileInputs.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.RazorTargetAssemblyInfo.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Manifest.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Pack.cache
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Usuarios.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Usuarios.API.props
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Usuarios.API.props
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Usuarios.API.props
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\nirok\Downloads\duoc_uc\integracion_plataformas\api_c#\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.genruntimeconfig.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.StaticWebAssets.xml
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.exe
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.deps.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.runtimeconfig.dev.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\bin\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.AssemblyReference.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfoInputs.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.AssemblyInfo.cs
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.csproj.CoreCompileInputs.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.sourcelink.json
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.RazorTargetAssemblyInfo.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Manifest.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\Usuarios.API.StaticWebAssets.Pack.cache
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.Usuarios.API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.build.Usuarios.API.props
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildMultiTargeting.Usuarios.API.props
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\staticwebassets\msbuild.buildTransitive.Usuarios.API.props
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.dll
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.pdb
+C:\Users\nirok\Downloads\DUOC\Integracion Equipo\APICSharp\Usuarios.API\obj\Debug\netcoreapp3.1\Usuarios.API.genruntimeconfig.cache
