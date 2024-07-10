@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from flask_cors import CORS
-import requests
+import requests, time
 
 app = Flask(__name__)
 api = Api(app)
@@ -41,6 +41,18 @@ class BE(Resource):
         boleta = next((obj for obj in documentos if obj['id'] == boleta_id), None)
         return boleta
 
-api.add_resource(BE, '/api/BE', '/api/BE/<string:boleta_id>')
+class ProcessPayment(Resource):
+    def post(self):
+        time.sleep(5)
+        success = True
+        if success:
+            mensaje = "Pago validado correctamente."
+        else:
+            mensaje = "Hubo un problema al validar el pago. Inténtalo de nuevo."
+        return jsonify({'message': mensaje})
 
-app.run(debug=True)
+api.add_resource(BE, '/api/BE', '/api/BE/<string:boleta_id>')
+api.add_resource(ProcessPayment, '/api/payment')
+
+if __name__ == '__main__':
+    app.run(debug=True)
