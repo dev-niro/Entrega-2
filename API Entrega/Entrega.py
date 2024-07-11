@@ -29,9 +29,13 @@ class Entregas(Resource):
         body['estado'] = 'Pendiente'
         body['id'] = 'C' + str(len(entregas)+1).zfill(3)
         entregas.append(body)
+        return body['id']
 
     def get(self):
-        return {'entregas': entregas}, 200
+        retiros = [entrega for entrega in entregas if entrega['tipo_envio'] == 'Retiro']
+        despachos = [entrega for entrega in entregas if entrega['tipo_envio'] == 'Despacho']
+        return {'retiros': retiros,
+                'despachos': despachos}, 200
     
 api.add_resource(Entrega, '/api/entrega/<id_entrega>')
 api.add_resource(Entregas, '/api/entregas')

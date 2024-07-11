@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferremax</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+        background-color: darkslategrey;
+        color: whitesmoke;
+    }
+    table {
+      background-color: #2e2e2e;
+      color: white;
+    }
+    th, td {
+      border: 1px solid #555;
+      color: white;
+    }
+    th {
+      background-color: #444;
+      color: white;
+    }
+    h1, h2 {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="btn btn-danger"><i class="fas fa-arrow-left"></i> Volver</a>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Pedidos</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Retiros</h2>
+            <table id="tabla-retiro" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>ID Venta</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Datos de retiros -->
+              </tbody>
+            </table>
+          </div>
+          <div class="col-md-6">
+            <h2>Despachos</h2>
+            <table id="tabla-despacho" class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>ID Venta</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Datos de despachos -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+  <!-- Bootstrap JavaScript y dependencias -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    window.onload = function() {
+      // Fetch para obtener pedidos pendientes
+      fetch('http://localhost:5001/api/entregas')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('La respuesta de la red no fue correcta');
+        }
+        return response.json();
+      })
+      .then(data => {
+        var tabla_retiro = document.querySelector('#tabla-retiro tbody');
+        var tabla_despacho = document.querySelector('#tabla-despacho tbody');
+        data.retiros.forEach(dato => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${dato.id}</td>
+            <td>${dato.id_orden}</td>
+            <td>${dato.estado}</td>
+            <td>
+              <a class="btn btn-warning" onclick="generarBoleta('${dato.id_orden}','${dato.id}')" data-placement="top" title="Ver recibo"><i class="fas fa-receipt"></i></i></a>
+            </td>
+          `;
+          tabla_retiro.appendChild(row);
+        });
+        data.despachos.forEach(dato => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${dato.id}</td>
+            <td>${dato.id_orden}</td>
+            <td>${dato.estado}</td>
+            <td>
+              <a class="btn btn-warning" onclick="generarBoleta('${dato.id_orden}','${dato.id}')" data-placement="top" title="Ver recibo"><i class="fas fa-receipt"></i></i></a>
+            </td>
+          `;
+          tabla_despacho.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('Ha habido un problema con su operación de recuperación:', error);
+      });
+    }
+    function generarBoleta(id_boleta, id_entrega){
+      fetch('http://localhost:5000/api/BE/' + id_boleta)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('La respuesta de la red no fue correcta');
+        }
+        return response.text();
+      })
+      .then(data => {
+        datos = JSON.parse(data)
+        let boletaHtml = `
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Boleta</title>
+            <style>
+                body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+                }
+                .card {
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                max-width: 600px; /* Limitando el ancho máximo */
+                }
+                h1 {
+                text-align: center;
+                }
+                table {
+                width: 100%;
+                border-collapse: collapse;
+                }
+                table, th, td {
+                border: 1px solid black;
+                }
+                th, td {
+                padding: 8px;
+                text-align: left;
+                }
+                tfoot td {
+                text-align: right;
+                }
+            </style>
+            </head>
+            <body>
+            <div class="card">
+                <h1>Recibo Venta</h1>
+                <p><strong>Folio: </strong>${datos.id}</p>
+                <p><strong>N° Entrega: </strong>${id_entrega}</p>
+                <p><strong>Nombre cliente:</strong> ${datos.cliente.firstName} ${datos.cliente.lastName}</p>
+                <p><strong>Rut cliente:</strong> ${datos.cliente.rut}</p>
+                <p><strong>Direccion cliente:</strong> ${datos.cliente.address}</p>
+                <hr>
+                <h3>ID Detalle compra:</h3>
+                <table>
+                <thead>
+                    <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
+            datos.productos.forEach(producto => {
+            boletaHtml += `
+                <tr>
+                <td>${producto.name}</td>
+                <td>${producto.quantity}</td>
+                <td>${producto.price}</td>
+                <td>${producto.price*producto.quantity}</td>
+                </tr>
+            `;
+            });
+            boletaHtml += `
+                </tbody>
+                <tfoot>
+                    <tr>
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td><strong>${datos.total}</strong></td>
+                    </tr>
+                </tfoot>
+                </table>
+            </div>
+            </body>
+            </html>
+        `;
+// Crear un blob con la cadena JSON
+        const blob = new Blob([boletaHtml], { type: 'text/html' });
+
+        // Crear una URL para el blob
+        const url = URL.createObjectURL(blob);
+
+        // Abrir una nueva ventana con la URL del blob
+        window.open(url, '_blank');
+      })
+      .catch()
+    }
+  </script>
+</body>
+</html>
