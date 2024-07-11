@@ -32,6 +32,7 @@ class BE(Resource):
             'cliente': cliente,
             'productos': productos,
             'total': total,
+            'metodoPago': body['metodoPago'],
             'id': str(len(documentos)+1).zfill(6)
         }
         documentos.append(data)
